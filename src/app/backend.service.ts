@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { TodoItem } from './todo-item';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -19,7 +19,7 @@ export class BackendService {
     this.messageService.add(`BackendService: ${message}`);
   }
 
-  private apiUrl = 'todoapi-db-server.database.windows.net/api/todoitems';  // URL to web api
+  private readonly apiUrl = 'https://angulardemotodo.azurewebsites.net/api/todoitems';
   getTodoItems(): Observable<TodoItem[]> {
     return this.http.get<TodoItem[]>(this.apiUrl)
       .pipe(
