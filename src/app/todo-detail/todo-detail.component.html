@@ -1,0 +1,9 @@
+<div *ngIf="todoItem">
+  <h2>{{todoItem.name | uppercase}} Details</h2>
+  <div>id: {{todoItem.id}}</div>
+  <div>
+    <label for="todo-name">Task: </label>
+    <input id="todo-name" [(ngModel)]="todoItem.name" placeholder="get milk">
+  </div>
+</div>
+<button type="button" (click)="goBack()">Go Back</button>
