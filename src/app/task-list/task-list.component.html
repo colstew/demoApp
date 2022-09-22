@@ -1,0 +1,21 @@
+<mat-slide-toggle #details >Show details</mat-slide-toggle>
+<mat-divider></mat-divider>
+<mat-list>
+  <div *ngFor="let task of taskItems;">
+    <mat-list-item>
+      <mat-checkbox (change)="onCheckChange($event.checked, task)" [checked]="task.isComplete">{{task.name}}</mat-checkbox>
+      <span class="spacer"></span>
+      <span *ngIf="task.priority == 0" class="low priority">Low</span>
+      <span *ngIf="task.priority == 1" class="med priority">Medium</span>
+      <span *ngIf="task.priority == 2" class="high priority">High</span>
+      <button mat-icon-button (click)="onMoreClick(task)" aria-label="More">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-icon-button (click)="onDeleteClick(task)" aria-label="Delete">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+    <mat-list-item *ngIf="details.checked">{{task.detail}}</mat-list-item>
+    <mat-divider *ngIf="details.checked"></mat-divider>
+  </div>
+</mat-list>

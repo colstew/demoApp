@@ -1,0 +1,26 @@
+<div class="form">
+  <!--Task Field-->
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>Task</mat-label>
+    <input matInput required [(ngModel)]="taskItem.name" placeholder="get milk">
+  </mat-form-field>
+  <!--Details Field-->
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label >Details</mat-label>
+    <textarea matInput [(ngModel)]="taskItem.detail"></textarea>
+  </mat-form-field>
+  <!--Priority Field-->
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>Priority</mat-label>
+    <mat-select (selectionChange)="onSelectChange()" [(ngModel)]="selectedPriority">
+      <mat-option class="low" value="0">Low</mat-option>
+      <mat-option class="med" value="1">Medium</mat-option>
+      <mat-option class="high" value="2">High</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<!--Action Buttons-->
+<button mat-raised-button [mat-dialog-close]>Cancel</button>
+<button mat-raised-button color="primary" [mat-dialog-close]="taskItem" cdkFocusInitial>Done</button>
+
+

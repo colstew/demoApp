@@ -1,7 +1,28 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/todo-list">Todo List</a>
-  <a routerLink="/dashboard">Dashboard</a>
-</nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<mat-toolbar color="primary">
+  <button (click)="sidenav.toggle()" mat-icon-button aria-label="Menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My To-Do List</span>
+  <span class="filler"></span>
+  <button (click)="onNewTask()" mat-icon-button aria-label="New Task">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon>checklist</mat-icon>
+        <a mat-list-item routerLink= "/all-tasks" routerLinkActive="active-link"> All Tasks </a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>priority_high</mat-icon>
+        <a mat-list-item routerLink= "/hp-tasks" routerLinkActive="active-link"> High Priority Tasks </a>
+      </mat-list-item>
+      
+   </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,35 @@
+mat-slide-toggle {
+  padding: 14px;
+  width: 100%;
+  background-color: rgb(244, 244, 244);
+}
+
+mat-list {
+  padding: 0;
+}
+mat-list-item {
+  max-width: 30em;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.priority {
+  font-size: smaller;
+  padding: 0.24em 0.8em;
+  border-radius: 10px;
+}
+
+.high{
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.med{
+  background-color: rgba(255, 166, 0, 0.5);
+}
+
+.low{
+  background-color: rgba(0, 128, 0, 0.5);
+}
+
