@@ -1,0 +1,10 @@
+/*@import "../task-list/task-list.component.css";*/
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-right: 15px;
+}
